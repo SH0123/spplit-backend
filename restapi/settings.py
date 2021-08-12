@@ -27,7 +27,7 @@ SECRET_KEY = '2hw!1hf!$w*+-n_g8$jht9niji3qde-j5ub+)ymkbx$h+u4a%6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['spplit-env.eba-3rmvkvgi.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
