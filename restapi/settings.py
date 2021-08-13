@@ -93,12 +93,32 @@ WSGI_APPLICATION = 'restapi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+'''
+if DEBUG:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        }
+    }
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "HOST": os.environ.get("spplit-db.c0gil3pgzeey.us-west-2.rds.amazonaws.com"),
+            "NAME": os.environ.get("spplit-db"),
+            "USER": os.environ.get("spplit"),
+            "PASSWORD": os.environ.get("lifeisegg!00"),
+            "PORT": "5432",
+        }
+    }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
