@@ -56,6 +56,9 @@ INSTALLED_APPS = [
     'card',
     'friend',
     'appointment',
+
+    #custom commands
+    'management',
 ]
 
 MIDDLEWARE = [
