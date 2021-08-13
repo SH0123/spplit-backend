@@ -102,7 +102,7 @@ DATABASES = {
     }
 }
 '''
-'''
+
 if DEBUG:
     DATABASES = {
         "default": {
@@ -121,18 +121,7 @@ else:
             "PORT": "5432",
         }
     }
-'''
 
-DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "HOST": "spplit-db.c0gil3pgzeey.us-west-2.rds.amazonaws.com",
-            "NAME": ("spplit-db",
-            "USER": "spplit",
-            "PASSWORD": "lifeisegg!00",
-            "PORT": "5432",
-        }
-    }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
