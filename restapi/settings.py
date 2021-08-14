@@ -26,10 +26,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-if os.environ.get("DEBUG") == "False":
-    DEBUG = False
-else:
-    DEBUG = True
+# if os.environ.get("DEBUG") == "False":
+#     DEBUG = False
+# else:
+#     DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['spplit.eba-p9nfypbf.us-west-2.elasticbeanstalk.com']
 
@@ -118,12 +119,11 @@ else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.mysql",
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
-            "PORT": os.environ['RDS_PORT'],
+            'NAME': os.environ9'RDS_DB_NAME'),
+            'USER': os.environ('RDS_USERNAME'),
+            'PASSWORD': os.environ('RDS_PASSWORD'),
+            'HOST': os.environ('RDS_HOSTNAME'),
+            'PORT': os.environ('RDS_PORT'),
         }
     }
 # DATABASES = {
