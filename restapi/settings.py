@@ -119,24 +119,25 @@ else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.mysql",
-            'NAME': os.environ.get('RDS_DB_NAME'),
-            'USER': os.environ.get('RDS_USERNAME'),
-            'PASSWORD': os.environ.get('RDS_PASSWORD'),
-            'HOST': os.environ.get('RDS_HOSTNAME'),
-            'PORT': os.environ.get('RDS_PORT'),
+            'NAME': "spplit",
+            'USER': "admin",
+            'PASSWORD': "lifeisegg!00",
+            'HOST': "spplit-please.c0gil3pgzeey.us-west-2.rds.amazonaws.com",
+            'PORT': "3306",
         }
     }
-# DATABASES = {
+# else:
+#     DATABASES = {
 #         "default": {
-#             "ENGINE": "django.db.backends.postgresql",
-#             'NAME': os.environ['RDS_DB_NAME'],
-#             'USER': os.environ['RDS_USERNAME'],
-#             'PASSWORD': os.environ['RDS_PASSWORD'],
-#             'HOST': os.environ['RDS_HOSTNAME'],
-#             'PORT': os.environ['RDS_PORT'],
-#             "PORT": "5432",
+#             "ENGINE": "django.db.backends.mysql",
+#             'NAME': os.environ.get('RDS_DB_NAME'),
+#             'USER': os.environ.get('RDS_USERNAME'),
+#             'PASSWORD': os.environ.get('RDS_PASSWORD'),
+#             'HOST': os.environ.get('RDS_HOSTNAME'),
+#             'PORT': os.environ.get('RDS_PORT'),
 #         }
 #     }
+
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
