@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 #     DEBUG = False
 # else:
 #     DEBUG = True
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['spplit.eba-p9nfypbf.us-west-2.elasticbeanstalk.com']
 
