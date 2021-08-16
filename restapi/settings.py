@@ -34,8 +34,8 @@ SECRET_KEY = "2hw!1hf!$w*+-n_g8$jht9niji3qde-j5ub+)ymkbx$h+u4a%6"
 # DEBUG = True
 DEBUG = True
 
-ALLOWED_HOSTS = ['spplitPostGres.eba-29cmngvz.us-west-2.elasticbeanstalk.com']
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['spplitPostGres.eba-29cmngvz.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
