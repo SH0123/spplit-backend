@@ -27,6 +27,15 @@ class CardListViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
+    def get_queryset(self):
+        qs = super().get_queryset()
+
+        if self.request.user.is_authenticated :
+            qs = qs.filter(user = self.request.user)
+        else :
+            qs = qs.none()
+        return qs
+
 class CardRequestViewSet(viewsets.ModelViewSet):
     '''
         QR 인식을 통해 sender(QR 인식자)가 receiver(QR 제공자)에게 권한 요청
@@ -49,6 +58,15 @@ class CardRequestViewSet(viewsets.ModelViewSet):
  
     def perform_create(self, serializer):
         serializer.save(sender=self.request.user)
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+
+        if self.request.user.is_authenticated :
+            qs = qs.filter(sender = self.request.user) | qs.filter(receiver = self.request.user)
+        else :
+            qs = qs.none()
+        return qs
 
     def create(self, request, *args, **kwargs):
         cardId = self.request.POST['cardId']
