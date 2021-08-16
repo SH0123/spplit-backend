@@ -10,6 +10,7 @@ class CardListSerializers(serializers.ModelSerializer):
 
 class CardRequestSerializers(serializers.ModelSerializer):
     sender = serializers.ReadOnlyField(source='sender.username')
+    receiver = serializers.ReadOnlyField(source='receiver.username')
 
     class Meta:
         model = CardRequest
